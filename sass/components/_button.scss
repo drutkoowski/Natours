@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-decoration: none;
@@ -9,6 +10,17 @@
     transition: all 0.2;
     position: relative;
     font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: white;
+
+    &::after {
+      background-color: $color-primary;
+    }
   }
 
   &:hover {
@@ -20,7 +32,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
@@ -52,7 +66,7 @@
   }
 }
 
-.btn-text { 
+.btn-text {
   &:link,
   &:visited {
     font-size: $default-font-size;
@@ -70,7 +84,7 @@
     transform: translateY(-2px);
   }
 
-  &:active{
+  &:active {
     box-shadow: 0 1rem 2rem rgba(#fff, $alpha: 0.15);
     transform: translateY(0);
   }
